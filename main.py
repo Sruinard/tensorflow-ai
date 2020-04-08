@@ -1,51 +1,9 @@
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
 
-from processing import pre_transform, post_transform, Preprocess, Postprocess#preprocessing_func,
 from model import ConvertModel, CustomClassifier
+from processing import Preprocess, Postprocess
 
-
-
-# class PreProcessTFLayer(tf.keras.layers.Layer):
-#     def __init__(self, preprocessing_func):
-#         super().__init__()
-#         self.preprocess = preprocessing_func
-#
-#     def call(self, input):
-#         return self.preprocess(input)
-#
-# class PostProcessTFLayer(tf.keras.layers.Layer):
-#     def __init__(self, post_processing_func):
-#         super().__init__()
-#         self.post_processing = post_processing_func
-#
-#     def call(self, input):
-#         return self.post_processing(input)
-#
-# class ConvertModel(tf.keras.models.Model):
-#
-#     def __init__(self, preprocessing_func, model, post_processing_func):
-#         super().__init__()
-#         self.model = model
-#         self.preprocessing_func = preprocessing_func
-#         self.post_processing_func = post_processing_func
-#
-#     def call(self, inputs):
-#         x = self.preprocessing_func(inputs)
-#         x = self.model(x)
-#         x = self.post_processing_func(x)
-#         return x
-
-# def preprocessing_func(samples, target_size):
-#     width, height, n_dims = target_size
-#     samples = tf.divide(samples, 255.0)
-#     samples = tf.image.resize(samples, size=(width, height))
-#     samples = tf.reshape(samples, (-1, width, height, n_dims))
-#     return samples
-#
-# def post_processing_func(predictions):
-#     class_int = tf.argmax(predictions, axis=1)
-#     return class_int
 
 def main(model_version):
     path = f'./my_model/{model_version}/'

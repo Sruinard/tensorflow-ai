@@ -46,7 +46,6 @@ class Postprocess(tf.keras.layers.Layer):
     def call(self, inputs, **kwargs):
         class_int = tf.argmax(inputs, axis=1)
         class_name = tf.gather(self.labels, class_int)
-        class_name = tf.strings.regex_replace(class_name, "\t", "")
         return class_name
 
 #
