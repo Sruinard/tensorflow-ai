@@ -44,7 +44,7 @@ def test_tflite(input_data):
     return output_data
 
 
-def main(is_tf_serving=False):
+def main(is_tf_serving=True):
     (_, _), (x, y) = tf.keras.datasets.cifar10.load_data()
     labels = tf.io.gfile.GFile('labels.txt').read().split('\n')
 

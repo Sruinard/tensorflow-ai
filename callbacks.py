@@ -1,6 +1,8 @@
 import tensorflow as tf
 import numpy as np
 
+from model import ConvertModel
+
 class SaveProductionModel(tf.keras.callbacks.Callback):
 
     def __init__(self, patience=2):
